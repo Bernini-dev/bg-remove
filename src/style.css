@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body {
-  @apply bg-slate-200 text-slate-900 dark:bg-slate-700 dark:text-slate-50 font-sans transition-all duration-300;
+  @apply bg-white text-gray-800 font-sans transition-all duration-300;
 }
