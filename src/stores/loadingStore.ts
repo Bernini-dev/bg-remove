@@ -1,25 +1,17 @@
 import { defineStore } from "pinia";
+import { ref } from "vue";
 
-export const useLoadingStore = defineStore("loading", {
-  state: () => {
-    return { loadingStatus: false };
-  },
-  getters: {
-    getLoading(): boolean {
-      return this.loadingStatus;
-    },
-  },
-  computed: {
-    loading(): boolean {
-      return this.getLoading();
-    },
-  },
-  actions: {
-    startLoading() {
-      this.loadingStatus = true;
-    },
-    endLoading() {
-      this.loadingStatus = false;
-    },
-  },
+export const useLoadingStore = defineStore("loading",() => {
+  const loading = ref(false);
+  const startLoading = () => {
+    loading.value = true;
+  }
+  const endLoading = () => {
+    loading.value = false;
+  }
+  return {
+    loading,
+    startLoading,
+    endLoading,
+  }
 });
