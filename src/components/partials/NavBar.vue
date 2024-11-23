@@ -1,3 +1,7 @@
+<script lang="ts" setup>
+import DarkMode from '../DarkMode.vue';
+</script>
+
 <template>
     <!--dark mode - text and icons-->
     <nav
@@ -17,7 +21,7 @@
         </a>
       </div>
       <div>
-        <DarkModeButton />
+        <DarkMode />
       </div>
     </nav>
 </template>
