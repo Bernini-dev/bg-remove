@@ -1,9 +1,11 @@
 <script lang="ts" setup>
 import { Ref, ref } from "vue";
 import { removeBackground } from "@imgly/background-removal";
+import { useLoadingStore } from "../stores/loadingStore";
 
 const allFiles: Ref<File[]> = ref([]);
 const isDragover: Ref<Boolean> = ref(false);
+const loadingStore = useLoadingStore();
 
 const dropHandler = (event: any) => {
   const droppedFiles = Array.from(event.dataTransfer.files);
@@ -23,8 +25,8 @@ const deleteFile = (file: File) => {
 };
 
 const removeBackgroundFile = async (file: File) => {
+  loadingStore.startLoading();
   await removeBackground(file).then((result: any) => {
-    console.log(result);
     const url = window.URL.createObjectURL(result);
     var a = document.createElement("a");
     document.getElementById("#download")?.appendChild(a);
@@ -33,6 +35,7 @@ const removeBackgroundFile = async (file: File) => {
     a.click();
     window.URL.revokeObjectURL(url);
   });
+  loadingStore.endLoading();
 };
 </script>
 
