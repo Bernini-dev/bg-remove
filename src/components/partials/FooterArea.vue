@@ -34,16 +34,6 @@ import separator from "../../assets/img/seperator-start.svg";
             </li>
             <li class="flex-shrink: 1; flex-grow:1;">
               <a
-                href="/es/gtc"
-                class="group flex items-center cursor-pointer transition ease-in-out no-underline text-white hover:text-white no-touch-hover:hover:underline active:text-white py-2 focus:outline-none focus-visible:outline-none focus:ring-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary-hover rounded"
-                draggable="false"
-              >
-                Términos y condiciones generales
-                <!----></a
-              >
-            </li>
-            <li class="flex-shrink: 1; flex-grow:1;">
-              <a
                 href="/es/privacy"
                 class="group flex items-center cursor-pointer transition ease-in-out no-underline text-white hover:text-white no-touch-hover:hover:underline active:text-white py-2 focus:outline-none focus-visible:outline-none focus:ring-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary-hover rounded"
                 draggable="false"
@@ -52,26 +42,7 @@ import separator from "../../assets/img/seperator-start.svg";
                 <!----></a
               >
             </li>
-            <li class="flex-shrink: 1; flex-grow:1;">
-              <a
-                href="/es/cookies"
-                class="group flex items-center cursor-pointer transition ease-in-out no-underline text-white hover:text-white no-touch-hover:hover:underline active:text-white py-2 focus:outline-none focus-visible:outline-none focus:ring-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary-hover rounded"
-                draggable="false"
-              >
-                Política de cookies
-                <!----></a
-              >
-            </li>
-            <li class="flex-shrink: 1; flex-grow:1;">
-              <a
-                href="/es/imprint"
-                class="group flex items-center cursor-pointer transition ease-in-out no-underline text-white hover:text-white no-touch-hover:hover:underline active:text-white py-2 focus:outline-none focus-visible:outline-none focus:ring-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary-hover rounded"
-                draggable="false"
-              >
-                Marca
-                <!----></a
-              >
-            </li>
+
           </ul>
         </div>
       </div>
