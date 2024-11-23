@@ -16,8 +16,20 @@ const dropHandler = (event: any) => {
   isDragover.value = false;
 };
 
+const addImage = (event: any) => {
+  const droppedFiles = Array.from(event.target.files);
+  console.log(droppedFiles);
+  droppedFiles.forEach((f: any) => {
+    allFiles.value.push(f);
+  });
+};
+
 const setIsDragOver = (status: boolean) => {
   isDragover.value = status;
+};
+
+const chooseFiles = () => {
+  document.getElementById("imageUpload")?.click();
 };
 
 const deleteFile = (file: File) => {
@@ -41,23 +53,31 @@ const removeBackgroundFile = async (file: File) => {
 
 <template>
   <div
-    class="border border-2 w-full flex flex-col sm:justify-center sm:items-center sm:gap-8 sm:pt-36 sm:pb-16 rounded-3xl bg-white shadow-2xl"
+    class="border-2 w-full flex flex-col justify-center items-center gap-8 pt-16 pb-16 rounded-3xl bg-white shadow-2xl"
     @drop.prevent="dropHandler($event)"
     @dragover.prevent="setIsDragOver(true)"
     @dragleave.prevent="setIsDragOver(false)"
-    :class="
-      isDragover
-        ? 'border-dashed border-slate-300 dark:border-gray-400'
-        : 'border-slate-300 dark:border-gray-400'
-    "
+    :class="isDragover ? 'border-dashed border-slate-300 ' : 'border-slate-300'"
   >
-    <div class="hidden sm:flex flex-col gap-1.5">
-      <p class="m-0 font-bold text-xl ">
+    <div class="flex flex-col gap-1.5">
+      <button
+        type="button"
+        @click="chooseFiles()"
+        class="rounded-full font-semi-bold transition ease-in-out text-center font-body no-underline hover:no-underline py-3 inline-flex items-center justify-center text-2xl font-bold text-white bg-brand active:scale-[0.97] mb-6"
+      >
+        <div
+          class="[&amp;>svg]:scale-133 [&amp;>svg]:shrink-0 flex items-center gap-2"
+        >
         <font-awesome-icon
           icon="fas fa-cloud-upload-alt"
-          class="text-2xl text-slate-300 dark:text-gray-400"
+          class="text-2xl text-white ms-1"
         />
-        Arrastra aqui tu imagen
+          Cargar imagen
+        </div>
+      </button>
+      <input id="imageUpload" ref="file" type="file" hidden @change="addImage($event)" />
+      <p class="m-0 font-bold text-xl">
+        O arrastrala y sueltala aquí
       </p>
     </div>
     <div
@@ -70,13 +90,13 @@ const removeBackgroundFile = async (file: File) => {
         <span class="p-2" @click="removeBackgroundFile(f)">
           <font-awesome-icon
             icon="fas fa-cloud-download-alt"
-            class="text-slate-300 dark:text-gray-400"
+            class="text-slate-300"
           />
         </span>
         <span class="p-2" @click="deleteFile(f)">
           <font-awesome-icon
             icon="fas fa-xmark"
-            class="text-slate-300 dark:text-gray-400"
+            class="text-slate-300"
           />
         </span>
       </div>
