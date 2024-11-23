@@ -7,6 +7,8 @@ import {
   faHouse,
   faCloudDownloadAlt,
   faCloudUploadAlt,
+  faSun,
+  faMoon,
 } from "@fortawesome/free-solid-svg-icons";
 
 import "./style.css";
@@ -15,7 +17,14 @@ import App from "./App.vue";
 const app = createApp(App);
 const pinia = createPinia();
 
-library.add(faXmark, faHouse, faCloudDownloadAlt, faCloudUploadAlt);
+library.add(
+  faXmark,
+  faHouse,
+  faCloudDownloadAlt,
+  faCloudUploadAlt,
+  faSun,
+  faMoon
+);
 
 app.component("font-awesome-icon", FontAwesomeIcon);
 app.use(pinia);
