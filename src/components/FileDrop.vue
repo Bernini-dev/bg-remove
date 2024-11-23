@@ -41,20 +41,18 @@ const removeBackgroundFile = async (file: File) => {
 
 <template>
   <div
-    class="h-auto py-5 rounded-3xl flex flex-col items-center w-80"
+    class="border border-2 w-full flex flex-col sm:justify-center sm:items-center sm:gap-8 sm:pt-36 sm:pb-16 rounded-3xl bg-white shadow-2xl"
+    @drop.prevent="dropHandler($event)"
+    @dragover.prevent="setIsDragOver(true)"
+    @dragleave.prevent="setIsDragOver(false)"
+    :class="
+      isDragover
+        ? 'border-dashed border-slate-300 dark:border-gray-400'
+        : 'border-slate-300 dark:border-gray-400'
+    "
   >
-    <div
-      class="border border-2 rounded-3xl w-10/12 h-64 flex justify-center items-center bg-slate-50 dark:bg-slate-900"
-      @drop.prevent="dropHandler($event)"
-      @dragover.prevent="setIsDragOver(true)"
-      @dragleave.prevent="setIsDragOver(false)"
-      :class="
-        isDragover
-          ? 'border-dashed border-slate-300 dark:border-gray-400'
-          : 'border-slate-300 dark:border-gray-400'
-      "
-    >
-      <p class="text-sm">
+    <div class="hidden sm:flex flex-col gap-1.5">
+      <p class="m-0 font-bold text-xl ">
         <font-awesome-icon
           icon="fas fa-cloud-upload-alt"
           class="text-2xl text-slate-300 dark:text-gray-400"
