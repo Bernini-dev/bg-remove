@@ -41,10 +41,10 @@ const removeBackgroundFile = async (file: File) => {
 
 <template>
   <div
-    class="w-2/5 h-auto border py-5 rounded-xl flex flex-col items-center bg-slate-50 dark:bg-slate-900"
+    class="w-1/4 h-auto border py-5 rounded-3xl flex flex-col items-center bg-slate-50 dark:bg-slate-900"
   >
     <div
-      class="border-dashed border-2 rounded-xl w-10/12 h-64 flex justify-center items-center"
+      class="border-dashed border-2 rounded-3xl w-10/12 h-64 flex justify-center items-center"
       @drop.prevent="dropHandler($event)"
       @dragover.prevent="setIsDragOver(true)"
       @dragleave.prevent="setIsDragOver(false)"
@@ -59,7 +59,7 @@ const removeBackgroundFile = async (file: File) => {
           icon="fas fa-cloud-upload-alt"
           class="text-2xl text-slate-300 dark:text-gray-400"
         />
-        Sube tu imagen
+        Arrastra aqui tu imagen
       </p>
     </div>
     <div
