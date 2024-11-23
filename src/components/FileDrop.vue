@@ -54,7 +54,7 @@ const removeBackgroundFile = async (file: File) => {
       <p class="text-sm">
         <font-awesome-icon
           icon="fas fa-cloud-upload-alt"
-          class="text-5xl text-slate-300 dark:text-gray-400"
+          class="text-2xl text-slate-300 dark:text-gray-400"
         />
         Sube tu imagen
       </p>
@@ -64,8 +64,21 @@ const removeBackgroundFile = async (file: File) => {
       :key="f.name"
       class="w-10/12 px-5 py-1 my-1 flex justify-center border rounded-xl"
     >
-      <div @click="removeBackgroundFile(f)">{{ f.name }}</div>
-      <div @click="deleteFile(f)">X</div>
+      <div>{{ f.name }}</div>
+      <div class="ms-auto">
+        <span class="p-2" @click="removeBackgroundFile(f)">
+          <font-awesome-icon
+            icon="fas fa-cloud-download-alt"
+            class="text-slate-300 dark:text-gray-400"
+          />
+        </span>
+        <span class="p-2" @click="deleteFile(f)">
+          <font-awesome-icon
+            icon="fas fa-xmark"
+            class="text-slate-300 dark:text-gray-400"
+          />
+        </span>
+      </div>
     </div>
   </div>
 </template>
