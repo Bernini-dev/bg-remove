@@ -1,13 +1,14 @@
 import { defineStore } from "pinia";
-import { ref } from "vue";
+import { computed, ref } from "vue";
 
 export const useLoadingStore = defineStore("loading",() => {
-  const loading = ref(false);
+  const loadingStatus = ref(false);
+  const loading = computed(() => loadingStatus.value);
   const startLoading = () => {
-    loading.value = true;
+    loadingStatus.value = true;
   }
   const endLoading = () => {
-    loading.value = false;
+    loadingStatus.value = false;
   }
   return {
     loading,
