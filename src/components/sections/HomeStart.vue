@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import decobrush from "../../assets/img/deco-brush.svg";
 import FileDrop from "../FileDrop.vue";
 </script>
 <template>
@@ -10,19 +9,11 @@ import FileDrop from "../FileDrop.vue";
     <section class="py-4 md:py-8">
       <div class="mx-auto w-full px-8 max-w-5xl relative">
         <div
-          class="flex flex-col lg:flex-row items-center lg:items-start justify-center md:gap-4"
+          class="flex flex-col lg:flex-row items-center lg:items-start justify-center md:gap-4 content-center"
         >
           <div
             class="flex flex-col md:flex-row lg:flex-col items-center lg:items-start gap-6 md:gap-8 md:max-w-2xl lg:max-w-lg"
           >
-            <video
-              preload="auto"
-              class="w-full h-auto rounded-4xl max-w-[320px] lg:max-w-[420px]"
-              poster="https://sb.kaleidousercontent.com/67418/840x560/d749ed76de/manuel-poster.jpg"
-              autoplay="true"
-              playsinline="true"
-              src="https://sb.kaleidousercontent.com/67418/x/9289c7b8dd/manuel_compressed.mp4"
-            ></video>
             <div class="flex flex-col gap-4">
               <h1
                 class="font-display font-bold text-typo m-0 text-4xl md:text-5xl lg:text-6xl text-center md:!text-left"
@@ -33,22 +24,17 @@ import FileDrop from "../FileDrop.vue";
                 class="text-typo-tertiary font-bold text-xl m-0 !text-typo text-center md:!text-left"
               >
                 100&nbsp;% automático y
-                <span
-                  class="!py-1 !px-4 bg-no-repeat bg-cover bg-center"
-                  :style="{ backgroundImage: `url(${decobrush})` }"
-                >
-                  gratis
-                </span>
+                <span class="text-brand">gratis</span>
               </p>
             </div>
           </div>
           <div
-            class="relative group flex flex-col gap-4 md:gap-8 max-w-md mt-8 md:mt-28"
+            class="relative group flex flex-col gap-4 md:gap-8 max-w-md"
           >
             <FileDrop />
             <div class="max-w-md">
               <p
-                class="text-2xs text-typo-secondary text-center sm:!text-left !mt-4"
+                class="text-xs text-typo-secondary text-center sm:!text-left !mt-4"
               >
                 Al subir una imagen o URL, aceptas nuestros
                 <a
@@ -58,7 +44,7 @@ import FileDrop from "../FileDrop.vue";
                   href="/es/tos"
                   >Condiciones del servicio</a
                 >. Para saber más sobre cómo maneja tus datos personales
-                remove.bg, echa un vistazo a nuestra
+                brenini.dev, echa un vistazo a nuestra
                 <a
                   target="_blank"
                   rel="noopener"
