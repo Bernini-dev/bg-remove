@@ -53,7 +53,8 @@ const removeBackgroundFile = async (file: File) => {
 
 <template>
   <div
-    class="border-2 w-full flex flex-col justify-center items-center gap-8 pt-16 pb-16 rounded-3xl bg-white shadow-2xl"
+    class="border-2 w-full flex flex-col justify-center items-center gap-8 pt-16 pb-16 rounded-3xl shadow-2xl"
+    style="background: #201E33;"
     @drop.prevent="dropHandler($event)"
     @dragover.prevent="setIsDragOver(true)"
     @dragleave.prevent="setIsDragOver(false)"
