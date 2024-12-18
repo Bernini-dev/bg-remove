@@ -3,5 +3,6 @@
 @tailwind utilities;
 
 body {
-  @apply bg-white text-gray-800 font-sans transition-all duration-300;
+  @apply text-white font-sans transition-all duration-300;
+  background: #191135;
 }
