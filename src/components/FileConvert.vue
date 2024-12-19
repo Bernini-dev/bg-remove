@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { defineProps, Ref, ref } from "vue";
+import { Ref, ref } from "vue";
 import { removeBackground } from "@imgly/background-removal";
 
 const props = defineProps(["file"]);
