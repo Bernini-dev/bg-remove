@@ -1,28 +1,13 @@
 <script lang="ts" setup>
 import { Ref, ref } from "vue";
-import { removeBackground } from "@imgly/background-removal";
 import { useLoadingStore } from "../stores/loadingStore";
+import FileConvert from "../components/FileConvert.vue";
 import FileDrop from "../components/FileDrop.vue";
 
 const files: Ref<File[]> = ref([]);
-const loadingStore = useLoadingStore();
 
 const deleteFile = (file: File) => {
   files.value = files.value.filter((f: File) => f !== file);
-};
-
-const removeBackgroundFile = async (file: File) => {
-  loadingStore.startLoading();
-  await removeBackground(file).then((result: any) => {
-    const url = window.URL.createObjectURL(result);
-    var a = document.createElement("a");
-    document.getElementById("#download")?.appendChild(a);
-    a.href = url;
-    a.download = file.name;
-    a.click();
-    window.URL.revokeObjectURL(url);
-  });
-  loadingStore.endLoading();
 };
 </script>
 <template>
@@ -122,7 +107,7 @@ const removeBackgroundFile = async (file: File) => {
     </section>
   </div>
   <div class="flex flex-wrap gap-2">
-    <div v-for="file in files">{{ file }}</div>
+    <FileConvert v-for="file in files" :file="file" @delete-file="deleteFile(file)"/>
   </div>
   <div>
     <div
