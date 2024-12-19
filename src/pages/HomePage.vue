@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { Ref, ref } from "vue";
-import { useLoadingStore } from "../stores/loadingStore";
 import FileConvert from "../components/FileConvert.vue";
 import FileDrop from "../components/FileDrop.vue";
 
@@ -12,8 +11,7 @@ const deleteFile = (file: File) => {
 </script>
 <template>
   <div
-    class="flex items-center justify-center overflow-x-clip"
-    style="min-height: calc(-72px + 100vh)"
+    class="flex items-center justify-center overflow-x-clip py-48"
   >
     <section class="py-4 md:py-8">
       <div class="mx-auto w-full px-8 max-w-5xl relative">
@@ -106,27 +104,7 @@ const deleteFile = (file: File) => {
       </div>
     </section>
   </div>
-  <div class="flex flex-wrap gap-2">
+  <div class="flex flex-wrap gap-6 content-center justify-center">
     <FileConvert v-for="file in files" :file="file" @delete-file="deleteFile(file)"/>
-  </div>
-  <div>
-    <div
-      v-for="f in files"
-      :key="f.name"
-      class="w-10/12 px-5 py-1 my-1 flex justify-center border rounded-xl"
-    >
-      <div>{{ f.name }}</div>
-      <div class="ms-auto">
-        <span class="p-2" @click="removeBackgroundFile(f)">
-          <font-awesome-icon
-            icon="fas fa-cloud-download-alt"
-            class="text-slate-300"
-          />
-        </span>
-        <span class="p-2" @click="deleteFile(f)">
-          <font-awesome-icon icon="fas fa-xmark" class="text-slate-300" />
-        </span>
-      </div>
-    </div>
   </div>
 </template>
